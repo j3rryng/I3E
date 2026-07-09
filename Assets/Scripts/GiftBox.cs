@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class GiftBox : MonoBehaviour
 {
     [SerializeField] private int requiredPresses = 3;
+    [SerializeField] private GameObject ballPrefab;
 
     private int pressCount = 0;
     private bool playerInRange = false;
@@ -32,8 +33,11 @@ public class GiftBox : MonoBehaviour
             playerInRange = false;
     }
 
-    private void DestroyBox()
+private void DestroyBox()
     {
+        if (ballPrefab != null)
+            Instantiate(ballPrefab, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 }
