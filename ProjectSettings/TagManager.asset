@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Collectibles
+  - Door
   layers:
   - Default
   - TransparentFX
